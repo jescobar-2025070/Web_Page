@@ -1,0 +1,338 @@
+.fondo-index {
+    background-image: url('../img/backgroundIndex.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+.enlaces-superiores {
+    list-style-type: none;
+    /* Quitamos los puntos de la lista */
+    display: flex;
+    /* Hacemos que los elementos se posicionen en fila */
+    justify-content: center;
+    /* Centramos el menu */
+    padding: 20px 0;
+    /* Adjusted padding for better look with sticky */
+    margin: 0;
+    /* Remove top margin so it sticks to the very top */
+    gap: 30px;
+    /* Espacio entre las opciones */
+    position: sticky;
+    /* Make it sticky */
+    top: 0;
+    /* Stick to the top */
+    z-index: 1000;
+    /* Ensure it stays above other content */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent background for visibility */
+    width: 100%;
+    /* Ensure it spans the full width */
+    backdrop-filter: blur(5px);
+    /* Optional: adds a blur effect behind the nav */
+}
+
+.enlaces-superiores li {
+    display: inline;
+}
+
+.enlaces-superiores a {
+    text-decoration: none;
+    /* Quitamos el subrayado */
+    color: white;
+    /* Color del texto */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.enlacesSuperiores a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Fondo semitransparente al pasar el mouse */
+    color: #f0a500;
+    /* Un color dorado/café claro para resaltar */
+}
+
+.titulos {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin-top: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.textos {
+    text-align: justify;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.tabla {
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 90%;
+    max-width: 1000px;
+    color: white;
+}
+
+.tabla caption {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px black;
+}
+
+.tabla th,
+.tabla td {
+    padding: 20px;
+    text-align: left;
+    /* Alineación a la izquierda para texto */
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tabla th {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #f1f1f1;
+    border-bottom: 2px solid white;
+}
+
+/* Alineación específica para la columna de imagen si es necesario, o general */
+.tabla td:last-child {
+    text-align: center;
+}
+
+.tabla img {
+    width: 200px;
+    /* Tamaño mediano */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.tabla img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para los placeholders de imagenes y lista de contacto */
+.imagen-placeholder {
+    width: 90%;
+    max-width: 800px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 30px auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-shadow: 1px 1px 2px black;
+    overflow: hidden;
+}
+
+.imagen-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* This makes the image cover the entire area without distortion */
+    border-radius: 10px;
+    /* Match container border radius */
+}
+
+.lista-contacto {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.lista-contacto li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #f5f5f5;
+}
+
+.lista-contacto strong {
+    color: #f0a500;
+    /* Mismo color dorado usado en el hover del menu */
+    margin-right: 10px;
+}
+
+/* Estilos para el catalogo de productos */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.producto-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(240, 165, 0, 0.3);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.producto-card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #f0a500;
+}
+
+.producto-card .precio {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.producto-card .descripcion-corta {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.btn-detalles {
+    background-color: #f0a500;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-detalles:hover {
+    background-color: #d48f00;
+}
+
+/* Estilos para el Modal */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black w/ opacity */
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #222;
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #f0a500;
+    width: 90%;
+    max-width: 600px;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #f0a500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-price {
+    font-size: 1.5rem;
+    color: #f0a500;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+#modal-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    /* Show fully */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Scroll Animation Styles */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
