@@ -9,29 +9,17 @@
 
 .enlaces-superiores {
     list-style-type: none;
-    /* Quitamos los puntos de la lista */
     display: flex;
-    /* Hacemos que los elementos se posicionen en fila */
     justify-content: center;
-    /* Centramos el menu */
     padding: 20px 0;
-    /* Adjusted padding for better look with sticky */
     margin: 0;
-    /* Remove top margin so it sticks to the very top */
     gap: 30px;
-    /* Espacio entre las opciones */
     position: sticky;
-    /* Make it sticky */
     top: 0;
-    /* Stick to the top */
     z-index: 1000;
-    /* Ensure it stays above other content */
     background-color: rgba(0, 0, 0, 0.8);
-    /* Semi-transparent background for visibility */
     width: 100%;
-    /* Ensure it spans the full width */
     backdrop-filter: blur(5px);
-    /* Optional: adds a blur effect behind the nav */
 }
 
 .enlaces-superiores li {
@@ -40,9 +28,7 @@
 
 .enlaces-superiores a {
     text-decoration: none;
-    /* Quitamos el subrayado */
     color: white;
-    /* Color del texto */
     font-size: 1.2rem;
     font-weight: bold;
     padding: 10px 15px;
@@ -52,9 +38,7 @@
 
 .enlacesSuperiores a:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    /* Fondo semitransparente al pasar el mouse */
     color: #f0a500;
-    /* Un color dorado/café claro para resaltar */
 }
 
 .titulos {
@@ -102,7 +86,6 @@
 .tabla td {
     padding: 20px;
     text-align: left;
-    /* Alineación a la izquierda para texto */
     vertical-align: middle;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -114,14 +97,12 @@
     border-bottom: 2px solid white;
 }
 
-/* Alineación específica para la columna de imagen si es necesario, o general */
 .tabla td:last-child {
     text-align: center;
 }
 
 .tabla img {
     width: 200px;
-    /* Tamaño mediano */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -132,7 +113,6 @@
     transform: scale(1.05);
 }
 
-/* Estilos para los placeholders de imagenes y lista de contacto */
 .imagen-placeholder {
     width: 90%;
     max-width: 800px;
@@ -154,9 +134,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* This makes the image cover the entire area without distortion */
     border-radius: 10px;
-    /* Match container border radius */
 }
 
 .lista-contacto {
@@ -174,11 +152,9 @@
 
 .lista-contacto strong {
     color: #f0a500;
-    /* Mismo color dorado usado en el hover del menu */
     margin-right: 10px;
 }
 
-/* Estilos para el catalogo de productos */
 .productos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -248,7 +224,6 @@
     background-color: #d48f00;
 }
 
-/* Estilos para el Modal */
 .modal {
     display: none;
     position: fixed;
@@ -318,13 +293,11 @@
     width: 100%;
     max-height: 400px;
     object-fit: contain;
-    /* Show fully */
     border-radius: 8px;
     margin-bottom: 15px;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Scroll Animation Styles */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -337,37 +310,120 @@
 }
 
 .btn-detalles-carrito {
-  background-color: #d48f00;
-  border: none;
+    background-color: #d48f00;
+    border: none;
 
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  cursor: pointer;
-  transition: transform 0.15s ease, background-color 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.3s ease;
 
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
 
-  z-index: 9999;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-  padding: 0; 
+    z-index: 9999;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    padding: 0;
 }
 
 .btn-detalles-carrito .icono-carrito {
-  width: 26px;   
-  height: 26px;
-  object-fit: contain;
-  pointer-events: none;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    pointer-events: none;
 }
 
 .btn-detalles-carrito:hover {
-  background-color: #c98500;
-  transform: translateY(-2px);
+    background-color: #c98500;
+    transform: translateY(-2px);
+}
+
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-notification {
+    background-color: #222;
+    color: #fff;
+    border-left: 5px solid #f0a500;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    font-size: 1rem;
+}
+
+.toast-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(240, 165, 0, 0.3);
+}
+
+#payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#payment-form label {
+    font-size: 1.1rem;
+    color: #f0a500;
+    font-weight: bold;
+}
+
+#payment-form input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#payment-form input:focus {
+    outline: none;
+    border-color: #f0a500;
+    box-shadow: 0 0 8px rgba(240, 165, 0, 0.5);
+}
+
+#payment-form .total {
+    margin: 20px 0;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+#payment-form .btn-comprar {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    margin-top: 10px;
 }

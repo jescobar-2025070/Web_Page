@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Shop - Compras</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <table>
-        <caption>Sus productos seleccionados</caption>
-        <thead>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Sub-Total</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-            </tr>
-        </tbody>
-    </table>
+
+<body class="fondo-index">
+    <div class="container animate-on-scroll" style="max-width: 900px;">
+        <h1 class="titulos animate-on-scroll">Carrito de Compras</h1>
+        <table class="tabla animate-on-scroll">
+            <caption>Sus productos seleccionados</caption>
+            <thead>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Sub-Total</th>
+            </thead>
+            <tbody id="cart-items">
+                <!-- items seleccionados -->
+            </tbody>
+        </table>
+        <h2 class="total animate-on-scroll">Total: Q 0.00</h2>
+        <div style="display: flex; gap: 20px; justify-content: center;" class="animate-on-scroll">
+            <a href="productos.html">
+                <button class="btn-detalles">Seguir Comprando</button>
+            </a>
+            <a href="pago.html">
+                <button class="btn-detalles">Pagar</button>
+            </a>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
