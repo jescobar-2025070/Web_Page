@@ -260,24 +260,3 @@ form .total {
     font-size: 1.8rem;
     text-align: center;
 }
-
-/* Estilo para el botón Pagar */
-.btn-comprar {
-    display: inline-block;
-    background-color: #f0a500;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 12px 24px;
-    border-radius: 10px;
-    border: none;
-    text-align: center;
-    margin-top: 10px;
-    width: 90%;
-}
-
-.btn-comprar a {
-    color: black;
-    text-decoration: none;
-}
