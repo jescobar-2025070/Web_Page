@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var modal = document.getElementById("product-modal");
+    let modal = document.getElementById("product-modal");
     if (modal) {
-        var span = document.getElementsByClassName("close-btn")[0];
-        var modalTitle = document.getElementById("modal-title");
-        var modalImg = document.getElementById("modal-img");
-        var modalPrice = document.getElementById("modal-price");
-        var modalDesc = document.getElementById("modal-desc");
-        var productCards = document.querySelectorAll('.producto-card');
+        let span = document.getElementsByClassName("close-btn")[0];
+        let modalTitle = document.getElementById("modal-title");
+        let modalImg = document.getElementById("modal-img");
+        let modalPrice = document.getElementById("modal-price");
+        let modalDesc = document.getElementById("modal-desc");
+        let productCards = document.querySelectorAll('.producto-card');
 
         productCards.forEach(function (card) {
             card.addEventListener('click', function () {
-                var name = this.getAttribute('data-name');
-                var price = this.getAttribute('data-price');
-                var desc = this.getAttribute('data-desc');
-                var imgSrc = this.querySelector('img').src;
+                let name = this.getAttribute('data-name');
+                let price = this.getAttribute('data-price');
+                let desc = this.getAttribute('data-desc');
+                let imgSrc = this.querySelector('img').src;
 
                 modalTitle.textContent = name;
                 modalPrice.textContent = price;
@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    var observerOptions = {
+    let observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
 
-    var observer = new IntersectionObserver(function (entries, observer) {
+    let observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
@@ -53,14 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, observerOptions);
 
-    var elements = document.querySelectorAll('.animate-on-scroll');
+    let elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach(function (element) {
         observer.observe(element);
     });
 
     function addToCart(product) {
-        var cart = JSON.parse(localStorage.getItem('cart')) || [];
-        var existingProductIndex = cart.findIndex(p => p.name === product.name);
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let existingProductIndex = cart.findIndex(p => p.name === product.name);
 
         if (existingProductIndex > -1) {
             cart[existingProductIndex].quantity += 1;
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.appendChild(container);
         }
 
-        var toast = document.createElement('div');
+        let toast = document.createElement('div');
         toast.className = 'toast-notification';
         toast.textContent = message;
 
@@ -100,13 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);
     }
 
-    var buyButtons = document.querySelectorAll('.btn-comprar');
+    let buyButtons = document.querySelectorAll('.btn-comprar');
     buyButtons.forEach(function (button) {
         button.addEventListener('click', function (event) {
             event.stopPropagation();
-            var card = this.closest('.producto-card') || document.getElementById('product-modal');
+            let card = this.closest('.producto-card') || document.getElementById('product-modal');
 
-            var name, price;
+            let name, price;
 
             if (card.classList.contains('producto-card')) {
                 name = card.getAttribute('data-name');
@@ -120,22 +120,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    var cartTableBody = document.getElementById('cart-items');
-    var totalDisplay = document.querySelector('.total');
+    let cartTableBody = document.getElementById('cart-items');
+    let totalDisplay = document.querySelector('.total');
 
     if (cartTableBody || totalDisplay) {
-        var cart = JSON.parse(localStorage.getItem('cart')) || [];
-        var grandTotal = 0;
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let grandTotal = 0;
 
         if (cartTableBody) cartTableBody.innerHTML = '';
 
         cart.forEach(function (item) {
-            var unitPrice = parseFloat(item.price.replace('Q', ''));
-            var subTotal = (unitPrice * item.quantity);
+            let unitPrice = parseFloat(item.price.replace('Q', ''));
+            let subTotal = (unitPrice * item.quantity);
             grandTotal += subTotal;
 
             if (cartTableBody) {
-                var row = document.createElement('tr');
+                let row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${item.name}</td>
                     <td>${item.price}</td>
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    var paymentForm = document.getElementById('payment-form');
+    let paymentForm = document.getElementById('payment-form');
     if (paymentForm) {
         paymentForm.addEventListener('submit', function (event) {
             event.preventDefault();
