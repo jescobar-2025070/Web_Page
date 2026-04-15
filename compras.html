@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,22 +10,35 @@
 </head>
 
 <body class="fondo-index">
-    <div class="container animate-on-scroll" style="max-width: 900px;">
-        <h1 class="titulos animate-on-scroll">Carrito de Compras</h1>
-        <table class="tabla animate-on-scroll">
+    <div class="container">
+        <h1 class="titulos">Carrito de Compras</h1>
+        <table class="tabla">
             <caption>Sus productos seleccionados</caption>
             <thead>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Sub-Total</th>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Sub-Total</th>
+                </tr>
             </thead>
-            <tbody id="cart-items">
-                <!-- items seleccionados -->
+            <tbody>
+                <tr>
+                    <td>Café Arábica (1kg)</td>
+                    <td>Q 120.00</td>
+                    <td>1</td>
+                    <td>Q 120.00</td>
+                </tr>
+                <tr>
+                    <td>Café Robusta (500g)</td>
+                    <td>Q 85.00</td>
+                    <td>2</td>
+                    <td>Q 170.00</td>
+                </tr>
             </tbody>
         </table>
-        <h2 class="total animate-on-scroll">Total: Q 0.00</h2>
-        <div style="display: flex; gap: 20px; justify-content: center;" class="animate-on-scroll">
+        <h2 class="total">Total: Q 290.00</h2>
+        <div>
             <a href="productos.html">
                 <button class="btn-detalles">Seguir Comprando</button>
             </a>
@@ -34,7 +47,6 @@
             </a>
         </div>
     </div>
-    <script src="js/main.js"></script>
 </body>
 
 </html>
